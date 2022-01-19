@@ -2,12 +2,20 @@
 using namespace std;
 int main()
 {
-	int x;
-	int n=1, count =1;;
+	long long int x, count=0;
+	
 	cin>>x;
-	if(x%2+1>ceil(log2(x)))
-	cout<<ceil(log2(x))<<endl;
-	else
-		cout<<x%2+1<<endl;
+	while(x!=0)
+	{
+		if(x%2!=0)
+		{
+			x-=1;
+			x/=2;
+			count++;
+		}
+		else
+			x/=2;
+	}
+	cout<<count<<endl;
 	return 0;
 }
